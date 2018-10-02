@@ -1,0 +1,16 @@
+clc; clear all;
+A = [0 1; -2 -1];
+
+B = [0 2]';
+C = [1 0];
+Q = [5 0; 0 1];
+R = 4;
+
+[P, L, G] = care(A, B*(1/sqrt(R)), Q);
+K = B' * P / 4;
+p = -0.;
+r = 2;
+tspan = [0 10];
+initialConditions = [0; 0];
+[t, y] = ode45(@sys2, tspan, initialConditions);
+plot(t, y)

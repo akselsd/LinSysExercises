@@ -1,0 +1,5 @@
+function dx = sys2(t, x)
+    A = [
+    u = evalin('caller','-K*x + p*r');
+    evalin('caller', [dx = A*x + B*u;
+end
